@@ -1,0 +1,450 @@
+/* Sehatmand Gul Ahmed 2026 – landing page
+   Theme follows the Gul Ahmed corporate site: light patterned background,
+   blue accents, rounded white cards with light borders.
+   Brand colours from the Sehatmand logo are used for the programme phase tags. */
+
+:root {
+  --blue: #1f8bd0;          /* Gul Ahmed accent (nav button, headline) */
+  --blue-dark: #17689e;
+  --navy: #1b2b5c;          /* Gul Ahmed logo navy */
+  --text: #2f3640;
+  --muted: #6b7280;
+  --line: #e3e8ef;
+  --card: #ffffff;
+  --bg: #f4f7fb;
+  --gold: #d9a334;          /* Sehatmand poster gold */
+  --teal: #1f6b6b;          /* Sehatmand logo teal */
+  --orange: #e9832a;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(27, 43, 92, 0.08);
+  --gutter: 16px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 {
+  font-family: "Lora", Georgia, serif;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1em; }
+a { color: var(--blue); }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible + span {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section { padding: 56px 0; }
+.section--alt { background: #ffffff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section__intro { color: var(--muted); max-width: 680px; }
+
+.small { font-size: 0.875rem; color: var(--muted); }
+
+/* ---------- Top bar ---------- */
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+.brand img { width: 170px; height: auto; }
+.nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.nav a {
+  color: var(--navy);
+  text-decoration: none;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { border-bottom-color: var(--blue); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    radial-gradient(1200px 400px at 85% -10%, rgba(31, 139, 208, 0.12), transparent 60%),
+    radial-gradient(900px 380px at -10% 110%, rgba(217, 163, 52, 0.14), transparent 60%),
+    var(--bg);
+  padding: 72px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.accent { color: var(--blue); }
+.lead {
+  font-size: 1.1rem;
+  max-width: 620px;
+  color: var(--text);
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 14px;
+}
+.hero__note { font-size: 0.875rem; color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn--primary {
+  background: var(--blue);
+  color: #ffffff;
+}
+.btn--primary:hover { background: var(--blue-dark); }
+.btn--ghost {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn--ghost:hover { background: var(--navy); color: #ffffff; }
+.btn--block { width: 100%; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+/* ---------- Phases ---------- */
+.phase-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+  grid-template-columns: 1fr;
+}
+.phase h3 { color: var(--blue); }
+.phase__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.phase__tag--discover { background: var(--teal); }
+.phase__tag--move     { background: var(--orange); }
+.phase__tag--connect  { background: #6b4fa0; }
+.phase__tag--reflect  { background: var(--blue); }
+.phase__tag--continue { background: var(--gold); color: var(--navy); }
+.phase__q {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  color: var(--navy);
+}
+.phase__who {
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* ---------- Schedule table ---------- */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #ffffff;
+}
+table.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 560px;
+}
+.schedule th,
+.schedule td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.schedule th {
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.schedule tbody tr:nth-child(even) { background: #f8fafc; }
+.schedule td:first-child { white-space: nowrap; font-weight: 600; color: var(--navy); }
+
+.tbc {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8a5a00;
+  background: #fdf1d6;
+  border: 1px solid #f0d28a;
+  border-radius: 6px;
+  padding: 1px 8px;
+}
+
+/* ---------- Walking challenge ---------- */
+.walk {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  grid-template-columns: 1fr;
+  background: var(--navy);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 32px var(--gutter);
+  box-shadow: var(--shadow);
+}
+.walk h2 { color: #ffffff; }
+.walk p { color: #e6ecf7; }
+.walk strong { color: var(--gold); }
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist li {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 8px;
+  color: #e6ecf7;
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.walk__badge {
+  justify-self: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+}
+.walk__num {
+  font-family: "Lora", Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.walk__label { font-size: 0.85rem; color: #ffffff; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ---------- Pulse form ---------- */
+.pulse {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr;
+}
+.form { padding: 24px; }
+.q {
+  border: 0;
+  padding: 0;
+  margin: 0 0 22px;
+  min-width: 0;
+}
+.q legend {
+  font-weight: 600;
+  color: var(--navy);
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+.scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.scale label,
+.choices label {
+  position: relative;
+  cursor: pointer;
+}
+.scale input,
+.choices input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.scale span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  background: #ffffff;
+  transition: all 0.15s;
+}
+.scale input:checked + span {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+.scale__legend {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.choices {
+  display: grid;
+  gap: 8px;
+}
+.choices span {
+  display: block;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--navy);
+  transition: all 0.15s;
+}
+.choices input:checked + span {
+  border-color: var(--blue);
+  background: #eaf5fd;
+  font-weight: 600;
+}
+.form__error {
+  color: #b42318;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.form__privacy { margin: 14px 0 0; text-align: center; }
+.thanks { text-align: center; padding: 36px 22px; }
+.thanks h3 { color: var(--teal); }
+
+/* ---------- Feedback ---------- */
+.feedback__card {
+  text-align: center;
+  padding: 32px 22px;
+}
+.feedback__card p { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--navy);
+  color: #d7deee;
+  padding: 36px 0;
+  text-align: center;
+}
+.footer__inner {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+.footer img {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+.footer__tag { font-family: "Lora", Georgia, serif; font-style: italic; color: var(--gold); margin: 6px 0 0; }
+.footer .small { color: #aeb8d1; }
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 640px) {
+  .phase-grid { grid-template-columns: repeat(2, 1fr); }
+  .phase-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .form { padding: 32px; }
+}
+
+@media (min-width: 900px) {
+  .phase-grid { grid-template-columns: repeat(3, 1fr); }
+  .phase-grid > :last-child:nth-child(odd) { grid-column: auto; }
+  .walk { grid-template-columns: 1.4fr 1fr; padding: 48px; }
+  .pulse { grid-template-columns: 1fr 1.4fr; align-items: start; }
+  .pulse__intro { position: sticky; top: 110px; }
+  .feedback__card { padding: 48px 32px; }
+}
+
+@media (max-width: 520px) {
+  .topbar__inner { justify-content: center; }
+  .nav { justify-content: center; gap: 12px; font-size: 0.85rem; }
+  .scale { gap: 6px; }
+  .scale span { min-height: 44px; }
+  .walk__badge { width: 150px; height: 150px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
