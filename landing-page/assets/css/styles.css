@@ -83,11 +83,11 @@ input:focus-visible + span {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   flex-wrap: wrap;
 }
-.brand img { width: 170px; height: auto; }
+.brand img { height: 68px; width: auto; }
 .nav {
   display: flex;
   gap: 18px;
@@ -393,6 +393,21 @@ table.schedule {
 .thanks { text-align: center; padding: 36px 22px; }
 .thanks h3 { color: var(--teal); }
 
+/* ---------- QR code ---------- */
+.qr {
+  margin: 20px 0 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.qr img { width: 180px; height: 180px; }
+.qr figcaption { font-size: 0.85rem; color: var(--navy); font-weight: 600; }
+
 /* ---------- Feedback ---------- */
 .feedback__card {
   text-align: center;
@@ -413,6 +428,8 @@ table.schedule {
   justify-items: center;
 }
 .footer img {
+  height: 56px;
+  width: auto;
   background: #ffffff;
   border-radius: 10px;
   padding: 6px 10px;
